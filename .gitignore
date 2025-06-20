@@ -4,6 +4,7 @@
 # Ansible sensitive files
 ansible/credentials/
 ansible/*.log
+ansible/vault_pass.txt
 
 # Traefik ACME certificates
 docker/data/traefik/acme.json
