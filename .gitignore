@@ -1,0 +1,52 @@
+# Environment variables
+.env
+
+# Ansible sensitive files
+ansible/credentials/
+ansible/*.log
+
+# Traefik ACME certificates
+docker/data/traefik/acme.json
+
+# Docker volumes (not needed in repo)
+docker/volumes/
+
+# Backup files
+backups/
+*.bak
+*.tar.gz
+
+# Logs
+logs/
+*.log
+
+# SSH keys
+id_rsa*
+*.pub
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE / editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python virtual environments
+venv/
+env/
+
+# Git credentials and tokens
+*.key
+*.pem
+token.txt
+
+# Temporary files
+tmp/
+temp/
+
+# Ansible secrets
+ansible/secrets/
+ansible/*.vault.yml
