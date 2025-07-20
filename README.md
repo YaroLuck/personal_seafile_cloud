@@ -6,21 +6,33 @@
 ## Структура проекта
 ```
 personal-seafile-cloud/
-│
-├── ansible/                  # Ansible-скрипты
-│   ├── inventory.ini          # Ansible-инвентарь
-│   ├── playbook.yml           # Основной плейбук
-│   └── roles/
-│       └── setup-docker/     # Роль установки Docker, Compose и развёртки
-│
-├── docker/                   # Docker-файлы
-│   ├── docker-compose.yml     # Основной compose файл
-│   ├── .env                   # Переменные окружения
-│   └── data/
-│       └── traefik/           # Конфиги Traefik
-│            └── acme.json    # Хранение сертификатов Let's Encrypt
-│
-├── scripts/                   # Вспомогательные скрипты (backup.sh, restore.sh и т.д.)
+├── playbook.yml
+├── inventory.ini
+├── roles/
+│   ├── docker/
+│   │   └── tasks/main.yml
+│   ├── traefik/
+│   │   ├── files/
+│   │   │   └── traefik.yml
+│   │   └── tasks/main.yml
+│   └── seafile/
+│       ├── files/
+│       │   └── docker-compose.yml
+│       └── tasks/main.yml
 ├── .gitignore                
 └── README.md                  
+```
+
+## Основные команды
+
+### 1. Запуск плейбука для проверки соединения с серверами
+
+```aiignore
+ansible-playbook -i inventory.yml ping.yml
+```
+
+### 2. Запуск основого плейбука по развертыванию seafile и traefik
+
+```aiignore
+ansible-playbook -i inventory.yml playbook.yml
 ```
