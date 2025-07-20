@@ -1,0 +1,7 @@
+- name: Install and configure Seafile with Traefik
+  hosts: all
+  become: true
+  roles:
+    - docker
+    - traefik
+    - seafile
